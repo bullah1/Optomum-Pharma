@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Homepage -->
+  <url>
+    <loc>https://optimumpharmahlb.com/</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="bn-BD" href="https://optimumpharmahlb.com/" />
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://optimumpharmahlb.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://optimumpharmahlb.com/" />
+  </url>
+
+  <!-- Categories -->
+  <url>
+    <loc>https://optimumpharmahlb.com/categories</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Companies / Brands -->
+  <url>
+    <loc>https://optimumpharmahlb.com/companies</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Prescription Upload -->
+  <url>
+    <loc>https://optimumpharmahlb.com/prescription-upload</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Offers -->
+  <url>
+    <loc>https://optimumpharmahlb.com/offers</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Health Tips -->
+  <url>
+    <loc>https://optimumpharmahlb.com/health-tips</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Info Pages -->
+  <url>
+    <loc>https://optimumpharmahlb.com/about</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://optimumpharmahlb.com/contact</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://optimumpharmahlb.com/faq</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://optimumpharmahlb.com/privacy</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://optimumpharmahlb.com/terms</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://optimumpharmahlb.com/refund-policy</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://optimumpharmahlb.com/shipping</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- Auth -->
+  <url>
+    <loc>https://optimumpharmahlb.com/auth</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Install PWA -->
+  <url>
+    <loc>https://optimumpharmahlb.com/install</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+</urlset>

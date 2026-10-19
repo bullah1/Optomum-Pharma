@@ -1,0 +1,22 @@
+project_id = "efmloudxldijshwgcdfl"
+
+[functions.api-products]
+verify_jwt = false
+
+[functions.api-categories]
+verify_jwt = false
+
+[functions.api-orders]
+verify_jwt = false
+
+[functions.api-homepage]
+verify_jwt = false
+
+[functions.marketing-insights]
+verify_jwt = false
+
+[functions.admin-upload-image]
+verify_jwt = false
+
+[functions.sitemap-xml]
+verify_jwt = false

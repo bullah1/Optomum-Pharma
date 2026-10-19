@@ -1,0 +1,1 @@
+ALTER TABLE public.medicines ADD CONSTRAINT medicines_slug_unique UNIQUE (slug);

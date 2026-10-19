@@ -1,0 +1,22 @@
+
+CREATE INDEX IF NOT EXISTS idx_medicines_category_id ON public.medicines(category_id);
+CREATE INDEX IF NOT EXISTS idx_medicines_stock ON public.medicines(stock) WHERE stock > 0;
+CREATE INDEX IF NOT EXISTS idx_medicines_slug ON public.medicines(slug);
+CREATE INDEX IF NOT EXISTS idx_medicines_company ON public.medicines(company);
+CREATE INDEX IF NOT EXISTS idx_orders_user_id ON public.orders(user_id);
+CREATE INDEX IF NOT EXISTS idx_orders_status ON public.orders(status);
+CREATE INDEX IF NOT EXISTS idx_orders_created_at ON public.orders(created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_order_items_order_id ON public.order_items(order_id);
+CREATE INDEX IF NOT EXISTS idx_order_items_medicine_id ON public.order_items(medicine_id);
+CREATE INDEX IF NOT EXISTS idx_reviews_medicine_id ON public.reviews(medicine_id);
+CREATE INDEX IF NOT EXISTS idx_reviews_rating ON public.reviews(rating) WHERE rating >= 4;
+CREATE INDEX IF NOT EXISTS idx_notifications_user_id ON public.notifications(user_id);
+CREATE INDEX IF NOT EXISTS idx_notifications_read ON public.notifications(user_id, read) WHERE read = false;
+CREATE INDEX IF NOT EXISTS idx_flash_sale_active ON public.flash_sale_products(active) WHERE active = true;
+CREATE INDEX IF NOT EXISTS idx_marketing_visits_created ON public.marketing_visits(created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_marketing_events_session ON public.marketing_events(session_id);
+CREATE INDEX IF NOT EXISTS idx_shipping_addresses_user ON public.shipping_addresses(user_id);
+CREATE INDEX IF NOT EXISTS idx_lab_bookings_user ON public.lab_bookings(user_id);
+CREATE INDEX IF NOT EXISTS idx_doctor_appointments_user ON public.doctor_appointments(user_id);
+CREATE INDEX IF NOT EXISTS idx_rider_assignments_rider ON public.rider_assignments(rider_id);
+CREATE INDEX IF NOT EXISTS idx_rider_assignments_order ON public.rider_assignments(order_id);

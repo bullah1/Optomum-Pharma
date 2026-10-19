@@ -1,0 +1,13 @@
+UPDATE categories SET image_url = 'https://efmloudxldijshwgcdfl.supabase.co/storage/v1/object/public/product-images/categories/medicine.png' WHERE id = 'a1000000-0000-0000-0000-000000000001';
+UPDATE categories SET image_url = 'https://efmloudxldijshwgcdfl.supabase.co/storage/v1/object/public/product-images/categories/lab-test.png' WHERE id = 'a1000000-0000-0000-0000-000000000002';
+UPDATE categories SET image_url = 'https://efmloudxldijshwgcdfl.supabase.co/storage/v1/object/public/product-images/categories/healthcare.png' WHERE id = 'a1000000-0000-0000-0000-000000000003';
+UPDATE categories SET image_url = 'https://efmloudxldijshwgcdfl.supabase.co/storage/v1/object/public/product-images/categories/beauty.png' WHERE id = 'a1000000-0000-0000-0000-000000000004';
+UPDATE categories SET image_url = 'https://efmloudxldijshwgcdfl.supabase.co/storage/v1/object/public/product-images/categories/baby-mom.png' WHERE id = 'a1000000-0000-0000-0000-000000000005';
+UPDATE categories SET image_url = 'https://efmloudxldijshwgcdfl.supabase.co/storage/v1/object/public/product-images/categories/herbal.png' WHERE id = 'a1000000-0000-0000-0000-000000000006';
+UPDATE categories SET image_url = 'https://efmloudxldijshwgcdfl.supabase.co/storage/v1/object/public/product-images/categories/home-care.png' WHERE id = 'a1000000-0000-0000-0000-000000000007';
+UPDATE categories SET image_url = 'https://efmloudxldijshwgcdfl.supabase.co/storage/v1/object/public/product-images/categories/nutrition.png' WHERE id = 'a1000000-0000-0000-0000-000000000008';
+UPDATE categories SET image_url = 'https://efmloudxldijshwgcdfl.supabase.co/storage/v1/object/public/product-images/categories/doctor.png' WHERE id = 'a1000000-0000-0000-0000-000000000009';
+UPDATE categories SET image_url = 'https://efmloudxldijshwgcdfl.supabase.co/storage/v1/object/public/product-images/categories/supplement.png' WHERE id = 'a1000000-0000-0000-0000-00000000000a';
+UPDATE categories SET image_url = 'https://efmloudxldijshwgcdfl.supabase.co/storage/v1/object/public/product-images/categories/skincare.png' WHERE id = 'b1000000-0000-0000-0000-000000000001';
+UPDATE categories SET image_url = 'https://efmloudxldijshwgcdfl.supabase.co/storage/v1/object/public/product-images/categories/womens-hygiene.png' WHERE id = 'b1000000-0000-0000-0000-000000000002';
+UPDATE categories SET image_url = 'https://efmloudxldijshwgcdfl.supabase.co/storage/v1/object/public/product-images/categories/diapers.png' WHERE id = 'b1000000-0000-0000-0000-000000000003';

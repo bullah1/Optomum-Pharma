@@ -1,0 +1,1341 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Homepage sections — responsive snapshots > PromoCards — bottom cards (Medicines / WhatsApp / Upload Prescription) > snapshot @ desktop-1280 1`] = `
+<div
+  class="grid grid-cols-3 gap-2.5"
+>
+  <a
+    class="rounded-xl bg-violet-50/50 border border-violet-100 shadow-sm p-2.5 flex flex-col gap-1.5 h-[120px] active:scale-[0.97] transition-all"
+    href="/categories"
+  >
+    <div
+      class="w-8 h-8 rounded-lg flex items-center justify-center"
+      style="background-color: rgba(139, 92, 246, 0.078);"
+    >
+      <svg
+        class="lucide lucide-pill"
+        fill="none"
+        height="15"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        style="color: rgb(139, 92, 246);"
+        viewBox="0 0 24 24"
+        width="15"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"
+        />
+        <path
+          d="m8.5 8.5 7 7"
+        />
+      </svg>
+    </div>
+    <div
+      class="min-w-0"
+    >
+      <p
+        class="text-[9px] text-muted-foreground font-medium leading-tight truncate"
+      >
+        Shop
+      </p>
+      <p
+        class="text-[12.5px] font-bold text-foreground leading-tight truncate"
+      >
+        All Medicines
+      </p>
+    </div>
+    <span
+      class="text-[9.5px] font-semibold mt-auto truncate"
+      style="color: rgb(139, 92, 246);"
+    >
+      Browse
+       →
+    </span>
+  </a>
+  <a
+    class="rounded-xl bg-emerald-50/50 border border-emerald-100 shadow-sm p-2.5 flex flex-col gap-1.5 h-[120px] active:scale-[0.97] transition-all"
+    href="https://wa.me/8801306383938"
+  >
+    <div
+      class="w-8 h-8 rounded-lg flex items-center justify-center"
+      style="background-color: rgba(16, 185, 129, 0.078);"
+    >
+      <svg
+        class="lucide lucide-message-circle"
+        fill="none"
+        height="15"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        style="color: rgb(16, 185, 129);"
+        viewBox="0 0 24 24"
+        width="15"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"
+        />
+      </svg>
+    </div>
+    <div
+      class="min-w-0"
+    >
+      <p
+        class="text-[9px] text-muted-foreground font-medium leading-tight truncate"
+      >
+        Order
+      </p>
+      <p
+        class="text-[12.5px] font-bold text-foreground leading-tight truncate"
+      >
+        Via WhatsApp
+      </p>
+      <p
+        class="text-[9px] text-muted-foreground mt-0.5 leading-tight truncate"
+      >
+        +8801306383938
+      </p>
+    </div>
+    <span
+      class="text-[9.5px] font-semibold mt-auto truncate"
+      style="color: rgb(16, 185, 129);"
+    >
+      Send Message
+       →
+    </span>
+  </a>
+  <a
+    class="rounded-xl bg-orange-50/50 border border-orange-100 shadow-sm p-2.5 flex flex-col gap-1.5 h-[120px] active:scale-[0.97] transition-all"
+    href="/prescription-upload"
+  >
+    <div
+      class="w-8 h-8 rounded-lg flex items-center justify-center"
+      style="background-color: rgba(249, 115, 22, 0.078);"
+    >
+      <svg
+        class="lucide lucide-file-text"
+        fill="none"
+        height="15"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        style="color: rgb(249, 115, 22);"
+        viewBox="0 0 24 24"
+        width="15"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"
+        />
+        <path
+          d="M14 2v4a2 2 0 0 0 2 2h4"
+        />
+        <path
+          d="M10 9H8"
+        />
+        <path
+          d="M16 13H8"
+        />
+        <path
+          d="M16 17H8"
+        />
+      </svg>
+    </div>
+    <div
+      class="min-w-0"
+    >
+      <p
+        class="text-[9px] text-muted-foreground font-medium leading-tight truncate"
+      >
+        UPTO
+      </p>
+      <p
+        class="text-[12.5px] font-bold text-foreground leading-tight truncate"
+      >
+        10% OFF
+      </p>
+      <p
+        class="text-[9px] text-muted-foreground mt-0.5 leading-tight truncate"
+      >
+        + Cashback
+      </p>
+    </div>
+    <span
+      class="text-[9.5px] font-semibold mt-auto truncate"
+      style="color: rgb(249, 115, 22);"
+    >
+      Upload Prescription
+       →
+    </span>
+  </a>
+</div>
+`;
+
+exports[`Homepage sections — responsive snapshots > PromoCards — bottom cards (Medicines / WhatsApp / Upload Prescription) > snapshot @ mobile-360 1`] = `
+<div
+  class="grid grid-cols-3 gap-2.5"
+>
+  <a
+    class="rounded-xl bg-violet-50/50 border border-violet-100 shadow-sm p-2.5 flex flex-col gap-1.5 h-[120px] active:scale-[0.97] transition-all"
+    href="/categories"
+  >
+    <div
+      class="w-8 h-8 rounded-lg flex items-center justify-center"
+      style="background-color: rgba(139, 92, 246, 0.078);"
+    >
+      <svg
+        class="lucide lucide-pill"
+        fill="none"
+        height="15"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        style="color: rgb(139, 92, 246);"
+        viewBox="0 0 24 24"
+        width="15"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"
+        />
+        <path
+          d="m8.5 8.5 7 7"
+        />
+      </svg>
+    </div>
+    <div
+      class="min-w-0"
+    >
+      <p
+        class="text-[9px] text-muted-foreground font-medium leading-tight truncate"
+      >
+        Shop
+      </p>
+      <p
+        class="text-[12.5px] font-bold text-foreground leading-tight truncate"
+      >
+        All Medicines
+      </p>
+    </div>
+    <span
+      class="text-[9.5px] font-semibold mt-auto truncate"
+      style="color: rgb(139, 92, 246);"
+    >
+      Browse
+       →
+    </span>
+  </a>
+  <a
+    class="rounded-xl bg-emerald-50/50 border border-emerald-100 shadow-sm p-2.5 flex flex-col gap-1.5 h-[120px] active:scale-[0.97] transition-all"
+    href="https://wa.me/8801306383938"
+  >
+    <div
+      class="w-8 h-8 rounded-lg flex items-center justify-center"
+      style="background-color: rgba(16, 185, 129, 0.078);"
+    >
+      <svg
+        class="lucide lucide-message-circle"
+        fill="none"
+        height="15"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        style="color: rgb(16, 185, 129);"
+        viewBox="0 0 24 24"
+        width="15"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"
+        />
+      </svg>
+    </div>
+    <div
+      class="min-w-0"
+    >
+      <p
+        class="text-[9px] text-muted-foreground font-medium leading-tight truncate"
+      >
+        Order
+      </p>
+      <p
+        class="text-[12.5px] font-bold text-foreground leading-tight truncate"
+      >
+        Via WhatsApp
+      </p>
+      <p
+        class="text-[9px] text-muted-foreground mt-0.5 leading-tight truncate"
+      >
+        +8801306383938
+      </p>
+    </div>
+    <span
+      class="text-[9.5px] font-semibold mt-auto truncate"
+      style="color: rgb(16, 185, 129);"
+    >
+      Send Message
+       →
+    </span>
+  </a>
+  <a
+    class="rounded-xl bg-orange-50/50 border border-orange-100 shadow-sm p-2.5 flex flex-col gap-1.5 h-[120px] active:scale-[0.97] transition-all"
+    href="/prescription-upload"
+  >
+    <div
+      class="w-8 h-8 rounded-lg flex items-center justify-center"
+      style="background-color: rgba(249, 115, 22, 0.078);"
+    >
+      <svg
+        class="lucide lucide-file-text"
+        fill="none"
+        height="15"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        style="color: rgb(249, 115, 22);"
+        viewBox="0 0 24 24"
+        width="15"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"
+        />
+        <path
+          d="M14 2v4a2 2 0 0 0 2 2h4"
+        />
+        <path
+          d="M10 9H8"
+        />
+        <path
+          d="M16 13H8"
+        />
+        <path
+          d="M16 17H8"
+        />
+      </svg>
+    </div>
+    <div
+      class="min-w-0"
+    >
+      <p
+        class="text-[9px] text-muted-foreground font-medium leading-tight truncate"
+      >
+        UPTO
+      </p>
+      <p
+        class="text-[12.5px] font-bold text-foreground leading-tight truncate"
+      >
+        10% OFF
+      </p>
+      <p
+        class="text-[9px] text-muted-foreground mt-0.5 leading-tight truncate"
+      >
+        + Cashback
+      </p>
+    </div>
+    <span
+      class="text-[9.5px] font-semibold mt-auto truncate"
+      style="color: rgb(249, 115, 22);"
+    >
+      Upload Prescription
+       →
+    </span>
+  </a>
+</div>
+`;
+
+exports[`Homepage sections — responsive snapshots > PromoCards — bottom cards (Medicines / WhatsApp / Upload Prescription) > snapshot @ mobile-390 1`] = `
+<div
+  class="grid grid-cols-3 gap-2.5"
+>
+  <a
+    class="rounded-xl bg-violet-50/50 border border-violet-100 shadow-sm p-2.5 flex flex-col gap-1.5 h-[120px] active:scale-[0.97] transition-all"
+    href="/categories"
+  >
+    <div
+      class="w-8 h-8 rounded-lg flex items-center justify-center"
+      style="background-color: rgba(139, 92, 246, 0.078);"
+    >
+      <svg
+        class="lucide lucide-pill"
+        fill="none"
+        height="15"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        style="color: rgb(139, 92, 246);"
+        viewBox="0 0 24 24"
+        width="15"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"
+        />
+        <path
+          d="m8.5 8.5 7 7"
+        />
+      </svg>
+    </div>
+    <div
+      class="min-w-0"
+    >
+      <p
+        class="text-[9px] text-muted-foreground font-medium leading-tight truncate"
+      >
+        Shop
+      </p>
+      <p
+        class="text-[12.5px] font-bold text-foreground leading-tight truncate"
+      >
+        All Medicines
+      </p>
+    </div>
+    <span
+      class="text-[9.5px] font-semibold mt-auto truncate"
+      style="color: rgb(139, 92, 246);"
+    >
+      Browse
+       →
+    </span>
+  </a>
+  <a
+    class="rounded-xl bg-emerald-50/50 border border-emerald-100 shadow-sm p-2.5 flex flex-col gap-1.5 h-[120px] active:scale-[0.97] transition-all"
+    href="https://wa.me/8801306383938"
+  >
+    <div
+      class="w-8 h-8 rounded-lg flex items-center justify-center"
+      style="background-color: rgba(16, 185, 129, 0.078);"
+    >
+      <svg
+        class="lucide lucide-message-circle"
+        fill="none"
+        height="15"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        style="color: rgb(16, 185, 129);"
+        viewBox="0 0 24 24"
+        width="15"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"
+        />
+      </svg>
+    </div>
+    <div
+      class="min-w-0"
+    >
+      <p
+        class="text-[9px] text-muted-foreground font-medium leading-tight truncate"
+      >
+        Order
+      </p>
+      <p
+        class="text-[12.5px] font-bold text-foreground leading-tight truncate"
+      >
+        Via WhatsApp
+      </p>
+      <p
+        class="text-[9px] text-muted-foreground mt-0.5 leading-tight truncate"
+      >
+        +8801306383938
+      </p>
+    </div>
+    <span
+      class="text-[9.5px] font-semibold mt-auto truncate"
+      style="color: rgb(16, 185, 129);"
+    >
+      Send Message
+       →
+    </span>
+  </a>
+  <a
+    class="rounded-xl bg-orange-50/50 border border-orange-100 shadow-sm p-2.5 flex flex-col gap-1.5 h-[120px] active:scale-[0.97] transition-all"
+    href="/prescription-upload"
+  >
+    <div
+      class="w-8 h-8 rounded-lg flex items-center justify-center"
+      style="background-color: rgba(249, 115, 22, 0.078);"
+    >
+      <svg
+        class="lucide lucide-file-text"
+        fill="none"
+        height="15"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        style="color: rgb(249, 115, 22);"
+        viewBox="0 0 24 24"
+        width="15"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"
+        />
+        <path
+          d="M14 2v4a2 2 0 0 0 2 2h4"
+        />
+        <path
+          d="M10 9H8"
+        />
+        <path
+          d="M16 13H8"
+        />
+        <path
+          d="M16 17H8"
+        />
+      </svg>
+    </div>
+    <div
+      class="min-w-0"
+    >
+      <p
+        class="text-[9px] text-muted-foreground font-medium leading-tight truncate"
+      >
+        UPTO
+      </p>
+      <p
+        class="text-[12.5px] font-bold text-foreground leading-tight truncate"
+      >
+        10% OFF
+      </p>
+      <p
+        class="text-[9px] text-muted-foreground mt-0.5 leading-tight truncate"
+      >
+        + Cashback
+      </p>
+    </div>
+    <span
+      class="text-[9.5px] font-semibold mt-auto truncate"
+      style="color: rgb(249, 115, 22);"
+    >
+      Upload Prescription
+       →
+    </span>
+  </a>
+</div>
+`;
+
+exports[`Homepage sections — responsive snapshots > PromoCards — bottom cards (Medicines / WhatsApp / Upload Prescription) > snapshot @ tablet-768 1`] = `
+<div
+  class="grid grid-cols-3 gap-2.5"
+>
+  <a
+    class="rounded-xl bg-violet-50/50 border border-violet-100 shadow-sm p-2.5 flex flex-col gap-1.5 h-[120px] active:scale-[0.97] transition-all"
+    href="/categories"
+  >
+    <div
+      class="w-8 h-8 rounded-lg flex items-center justify-center"
+      style="background-color: rgba(139, 92, 246, 0.078);"
+    >
+      <svg
+        class="lucide lucide-pill"
+        fill="none"
+        height="15"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        style="color: rgb(139, 92, 246);"
+        viewBox="0 0 24 24"
+        width="15"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"
+        />
+        <path
+          d="m8.5 8.5 7 7"
+        />
+      </svg>
+    </div>
+    <div
+      class="min-w-0"
+    >
+      <p
+        class="text-[9px] text-muted-foreground font-medium leading-tight truncate"
+      >
+        Shop
+      </p>
+      <p
+        class="text-[12.5px] font-bold text-foreground leading-tight truncate"
+      >
+        All Medicines
+      </p>
+    </div>
+    <span
+      class="text-[9.5px] font-semibold mt-auto truncate"
+      style="color: rgb(139, 92, 246);"
+    >
+      Browse
+       →
+    </span>
+  </a>
+  <a
+    class="rounded-xl bg-emerald-50/50 border border-emerald-100 shadow-sm p-2.5 flex flex-col gap-1.5 h-[120px] active:scale-[0.97] transition-all"
+    href="https://wa.me/8801306383938"
+  >
+    <div
+      class="w-8 h-8 rounded-lg flex items-center justify-center"
+      style="background-color: rgba(16, 185, 129, 0.078);"
+    >
+      <svg
+        class="lucide lucide-message-circle"
+        fill="none"
+        height="15"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        style="color: rgb(16, 185, 129);"
+        viewBox="0 0 24 24"
+        width="15"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"
+        />
+      </svg>
+    </div>
+    <div
+      class="min-w-0"
+    >
+      <p
+        class="text-[9px] text-muted-foreground font-medium leading-tight truncate"
+      >
+        Order
+      </p>
+      <p
+        class="text-[12.5px] font-bold text-foreground leading-tight truncate"
+      >
+        Via WhatsApp
+      </p>
+      <p
+        class="text-[9px] text-muted-foreground mt-0.5 leading-tight truncate"
+      >
+        +8801306383938
+      </p>
+    </div>
+    <span
+      class="text-[9.5px] font-semibold mt-auto truncate"
+      style="color: rgb(16, 185, 129);"
+    >
+      Send Message
+       →
+    </span>
+  </a>
+  <a
+    class="rounded-xl bg-orange-50/50 border border-orange-100 shadow-sm p-2.5 flex flex-col gap-1.5 h-[120px] active:scale-[0.97] transition-all"
+    href="/prescription-upload"
+  >
+    <div
+      class="w-8 h-8 rounded-lg flex items-center justify-center"
+      style="background-color: rgba(249, 115, 22, 0.078);"
+    >
+      <svg
+        class="lucide lucide-file-text"
+        fill="none"
+        height="15"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        style="color: rgb(249, 115, 22);"
+        viewBox="0 0 24 24"
+        width="15"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"
+        />
+        <path
+          d="M14 2v4a2 2 0 0 0 2 2h4"
+        />
+        <path
+          d="M10 9H8"
+        />
+        <path
+          d="M16 13H8"
+        />
+        <path
+          d="M16 17H8"
+        />
+      </svg>
+    </div>
+    <div
+      class="min-w-0"
+    >
+      <p
+        class="text-[9px] text-muted-foreground font-medium leading-tight truncate"
+      >
+        UPTO
+      </p>
+      <p
+        class="text-[12.5px] font-bold text-foreground leading-tight truncate"
+      >
+        10% OFF
+      </p>
+      <p
+        class="text-[9px] text-muted-foreground mt-0.5 leading-tight truncate"
+      >
+        + Cashback
+      </p>
+    </div>
+    <span
+      class="text-[9.5px] font-semibold mt-auto truncate"
+      style="color: rgb(249, 115, 22);"
+    >
+      Upload Prescription
+       →
+    </span>
+  </a>
+</div>
+`;
+
+exports[`Homepage sections — responsive snapshots > QuickActions (primary CTAs + offers banner) > snapshot @ desktop-1280 1`] = `
+<div
+  class="space-y-2.5"
+>
+  <div
+    class="grid grid-cols-2 gap-2.5"
+  >
+    <a
+      class="rounded-xl border shadow-sm active:scale-[0.97] transition-all h-[64px] flex items-center gap-2.5 px-3 bg-[#01AEF2] border-[#0098D4] text-white"
+      href="tel:+8801306383938"
+    >
+      <div
+        class="w-9 h-9 rounded-lg bg-white/20 flex items-center justify-center shrink-0"
+      >
+        <svg
+          class="lucide lucide-phone text-white"
+          fill="none"
+          height="16"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2.5"
+          viewBox="0 0 24 24"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+          />
+        </svg>
+      </div>
+      <div
+        class="min-w-0"
+      >
+        <span
+          class="block text-[12.5px] font-bold leading-tight"
+        >
+          Call to Order
+        </span>
+        <span
+          class="block text-[10px] text-white/85 mt-0.5 leading-tight"
+        >
+          24/7 Hotline
+        </span>
+      </div>
+    </a>
+    <a
+      class="rounded-xl border shadow-sm active:scale-[0.97] transition-all h-[64px] flex items-center gap-2.5 px-3 bg-[#F8931D] border-[#E07B0A] text-white"
+      href="/prescription-upload"
+    >
+      <div
+        class="w-9 h-9 rounded-lg bg-white/20 flex items-center justify-center shrink-0"
+      >
+        <svg
+          class="lucide lucide-upload text-white"
+          fill="none"
+          height="16"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2.5"
+          viewBox="0 0 24 24"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+          />
+          <polyline
+            points="17 8 12 3 7 8"
+          />
+          <line
+            x1="12"
+            x2="12"
+            y1="3"
+            y2="15"
+          />
+        </svg>
+      </div>
+      <div
+        class="min-w-0"
+      >
+        <span
+          class="block text-[12.5px] font-bold leading-tight"
+        >
+          Upload Rx
+        </span>
+        <span
+          class="block text-[10px] text-white/85 mt-0.5 leading-tight"
+        >
+          Get Medicine
+        </span>
+      </div>
+    </a>
+  </div>
+  <a
+    class="rounded-xl border shadow-sm active:scale-[0.97] transition-all flex items-center gap-2.5 px-3 py-2.5 bg-emerald-50/70 border-emerald-100 group"
+    href="/offers"
+  >
+    <div
+      class="w-9 h-9 rounded-lg bg-emerald-500 flex items-center justify-center shrink-0 shadow-sm"
+    >
+      <svg
+        class="lucide lucide-tag text-white"
+        fill="none"
+        height="15"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="15"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"
+        />
+        <circle
+          cx="7.5"
+          cy="7.5"
+          fill="currentColor"
+          r=".5"
+        />
+      </svg>
+    </div>
+    <div
+      class="flex-1 min-w-0"
+    >
+      <p
+        class="text-[12px] font-semibold text-foreground leading-tight"
+      >
+        Up to 30% off on medicines
+      </p>
+      <p
+        class="text-[9.5px] text-muted-foreground mt-0.5 leading-tight"
+      >
+        Check today's deals
+      </p>
+    </div>
+    <svg
+      class="lucide lucide-chevron-right text-muted-foreground/50 group-active:translate-x-0.5 transition-transform"
+      fill="none"
+      height="15"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="15"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m9 18 6-6-6-6"
+      />
+    </svg>
+  </a>
+</div>
+`;
+
+exports[`Homepage sections — responsive snapshots > QuickActions (primary CTAs + offers banner) > snapshot @ mobile-360 1`] = `
+<div
+  class="space-y-2.5"
+>
+  <div
+    class="grid grid-cols-2 gap-2.5"
+  >
+    <a
+      class="rounded-xl border shadow-sm active:scale-[0.97] transition-all h-[64px] flex items-center gap-2.5 px-3 bg-[#01AEF2] border-[#0098D4] text-white"
+      href="tel:+8801306383938"
+    >
+      <div
+        class="w-9 h-9 rounded-lg bg-white/20 flex items-center justify-center shrink-0"
+      >
+        <svg
+          class="lucide lucide-phone text-white"
+          fill="none"
+          height="16"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2.5"
+          viewBox="0 0 24 24"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+          />
+        </svg>
+      </div>
+      <div
+        class="min-w-0"
+      >
+        <span
+          class="block text-[12.5px] font-bold leading-tight"
+        >
+          Call to Order
+        </span>
+        <span
+          class="block text-[10px] text-white/85 mt-0.5 leading-tight"
+        >
+          24/7 Hotline
+        </span>
+      </div>
+    </a>
+    <a
+      class="rounded-xl border shadow-sm active:scale-[0.97] transition-all h-[64px] flex items-center gap-2.5 px-3 bg-[#F8931D] border-[#E07B0A] text-white"
+      href="/prescription-upload"
+    >
+      <div
+        class="w-9 h-9 rounded-lg bg-white/20 flex items-center justify-center shrink-0"
+      >
+        <svg
+          class="lucide lucide-upload text-white"
+          fill="none"
+          height="16"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2.5"
+          viewBox="0 0 24 24"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+          />
+          <polyline
+            points="17 8 12 3 7 8"
+          />
+          <line
+            x1="12"
+            x2="12"
+            y1="3"
+            y2="15"
+          />
+        </svg>
+      </div>
+      <div
+        class="min-w-0"
+      >
+        <span
+          class="block text-[12.5px] font-bold leading-tight"
+        >
+          Upload Rx
+        </span>
+        <span
+          class="block text-[10px] text-white/85 mt-0.5 leading-tight"
+        >
+          Get Medicine
+        </span>
+      </div>
+    </a>
+  </div>
+  <a
+    class="rounded-xl border shadow-sm active:scale-[0.97] transition-all flex items-center gap-2.5 px-3 py-2.5 bg-emerald-50/70 border-emerald-100 group"
+    href="/offers"
+  >
+    <div
+      class="w-9 h-9 rounded-lg bg-emerald-500 flex items-center justify-center shrink-0 shadow-sm"
+    >
+      <svg
+        class="lucide lucide-tag text-white"
+        fill="none"
+        height="15"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="15"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"
+        />
+        <circle
+          cx="7.5"
+          cy="7.5"
+          fill="currentColor"
+          r=".5"
+        />
+      </svg>
+    </div>
+    <div
+      class="flex-1 min-w-0"
+    >
+      <p
+        class="text-[12px] font-semibold text-foreground leading-tight"
+      >
+        Up to 30% off on medicines
+      </p>
+      <p
+        class="text-[9.5px] text-muted-foreground mt-0.5 leading-tight"
+      >
+        Check today's deals
+      </p>
+    </div>
+    <svg
+      class="lucide lucide-chevron-right text-muted-foreground/50 group-active:translate-x-0.5 transition-transform"
+      fill="none"
+      height="15"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="15"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m9 18 6-6-6-6"
+      />
+    </svg>
+  </a>
+</div>
+`;
+
+exports[`Homepage sections — responsive snapshots > QuickActions (primary CTAs + offers banner) > snapshot @ mobile-390 1`] = `
+<div
+  class="space-y-2.5"
+>
+  <div
+    class="grid grid-cols-2 gap-2.5"
+  >
+    <a
+      class="rounded-xl border shadow-sm active:scale-[0.97] transition-all h-[64px] flex items-center gap-2.5 px-3 bg-[#01AEF2] border-[#0098D4] text-white"
+      href="tel:+8801306383938"
+    >
+      <div
+        class="w-9 h-9 rounded-lg bg-white/20 flex items-center justify-center shrink-0"
+      >
+        <svg
+          class="lucide lucide-phone text-white"
+          fill="none"
+          height="16"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2.5"
+          viewBox="0 0 24 24"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+          />
+        </svg>
+      </div>
+      <div
+        class="min-w-0"
+      >
+        <span
+          class="block text-[12.5px] font-bold leading-tight"
+        >
+          Call to Order
+        </span>
+        <span
+          class="block text-[10px] text-white/85 mt-0.5 leading-tight"
+        >
+          24/7 Hotline
+        </span>
+      </div>
+    </a>
+    <a
+      class="rounded-xl border shadow-sm active:scale-[0.97] transition-all h-[64px] flex items-center gap-2.5 px-3 bg-[#F8931D] border-[#E07B0A] text-white"
+      href="/prescription-upload"
+    >
+      <div
+        class="w-9 h-9 rounded-lg bg-white/20 flex items-center justify-center shrink-0"
+      >
+        <svg
+          class="lucide lucide-upload text-white"
+          fill="none"
+          height="16"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2.5"
+          viewBox="0 0 24 24"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+          />
+          <polyline
+            points="17 8 12 3 7 8"
+          />
+          <line
+            x1="12"
+            x2="12"
+            y1="3"
+            y2="15"
+          />
+        </svg>
+      </div>
+      <div
+        class="min-w-0"
+      >
+        <span
+          class="block text-[12.5px] font-bold leading-tight"
+        >
+          Upload Rx
+        </span>
+        <span
+          class="block text-[10px] text-white/85 mt-0.5 leading-tight"
+        >
+          Get Medicine
+        </span>
+      </div>
+    </a>
+  </div>
+  <a
+    class="rounded-xl border shadow-sm active:scale-[0.97] transition-all flex items-center gap-2.5 px-3 py-2.5 bg-emerald-50/70 border-emerald-100 group"
+    href="/offers"
+  >
+    <div
+      class="w-9 h-9 rounded-lg bg-emerald-500 flex items-center justify-center shrink-0 shadow-sm"
+    >
+      <svg
+        class="lucide lucide-tag text-white"
+        fill="none"
+        height="15"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="15"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"
+        />
+        <circle
+          cx="7.5"
+          cy="7.5"
+          fill="currentColor"
+          r=".5"
+        />
+      </svg>
+    </div>
+    <div
+      class="flex-1 min-w-0"
+    >
+      <p
+        class="text-[12px] font-semibold text-foreground leading-tight"
+      >
+        Up to 30% off on medicines
+      </p>
+      <p
+        class="text-[9.5px] text-muted-foreground mt-0.5 leading-tight"
+      >
+        Check today's deals
+      </p>
+    </div>
+    <svg
+      class="lucide lucide-chevron-right text-muted-foreground/50 group-active:translate-x-0.5 transition-transform"
+      fill="none"
+      height="15"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="15"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m9 18 6-6-6-6"
+      />
+    </svg>
+  </a>
+</div>
+`;
+
+exports[`Homepage sections — responsive snapshots > QuickActions (primary CTAs + offers banner) > snapshot @ tablet-768 1`] = `
+<div
+  class="space-y-2.5"
+>
+  <div
+    class="grid grid-cols-2 gap-2.5"
+  >
+    <a
+      class="rounded-xl border shadow-sm active:scale-[0.97] transition-all h-[64px] flex items-center gap-2.5 px-3 bg-[#01AEF2] border-[#0098D4] text-white"
+      href="tel:+8801306383938"
+    >
+      <div
+        class="w-9 h-9 rounded-lg bg-white/20 flex items-center justify-center shrink-0"
+      >
+        <svg
+          class="lucide lucide-phone text-white"
+          fill="none"
+          height="16"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2.5"
+          viewBox="0 0 24 24"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+          />
+        </svg>
+      </div>
+      <div
+        class="min-w-0"
+      >
+        <span
+          class="block text-[12.5px] font-bold leading-tight"
+        >
+          Call to Order
+        </span>
+        <span
+          class="block text-[10px] text-white/85 mt-0.5 leading-tight"
+        >
+          24/7 Hotline
+        </span>
+      </div>
+    </a>
+    <a
+      class="rounded-xl border shadow-sm active:scale-[0.97] transition-all h-[64px] flex items-center gap-2.5 px-3 bg-[#F8931D] border-[#E07B0A] text-white"
+      href="/prescription-upload"
+    >
+      <div
+        class="w-9 h-9 rounded-lg bg-white/20 flex items-center justify-center shrink-0"
+      >
+        <svg
+          class="lucide lucide-upload text-white"
+          fill="none"
+          height="16"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2.5"
+          viewBox="0 0 24 24"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+          />
+          <polyline
+            points="17 8 12 3 7 8"
+          />
+          <line
+            x1="12"
+            x2="12"
+            y1="3"
+            y2="15"
+          />
+        </svg>
+      </div>
+      <div
+        class="min-w-0"
+      >
+        <span
+          class="block text-[12.5px] font-bold leading-tight"
+        >
+          Upload Rx
+        </span>
+        <span
+          class="block text-[10px] text-white/85 mt-0.5 leading-tight"
+        >
+          Get Medicine
+        </span>
+      </div>
+    </a>
+  </div>
+  <a
+    class="rounded-xl border shadow-sm active:scale-[0.97] transition-all flex items-center gap-2.5 px-3 py-2.5 bg-emerald-50/70 border-emerald-100 group"
+    href="/offers"
+  >
+    <div
+      class="w-9 h-9 rounded-lg bg-emerald-500 flex items-center justify-center shrink-0 shadow-sm"
+    >
+      <svg
+        class="lucide lucide-tag text-white"
+        fill="none"
+        height="15"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="15"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"
+        />
+        <circle
+          cx="7.5"
+          cy="7.5"
+          fill="currentColor"
+          r=".5"
+        />
+      </svg>
+    </div>
+    <div
+      class="flex-1 min-w-0"
+    >
+      <p
+        class="text-[12px] font-semibold text-foreground leading-tight"
+      >
+        Up to 30% off on medicines
+      </p>
+      <p
+        class="text-[9.5px] text-muted-foreground mt-0.5 leading-tight"
+      >
+        Check today's deals
+      </p>
+    </div>
+    <svg
+      class="lucide lucide-chevron-right text-muted-foreground/50 group-active:translate-x-0.5 transition-transform"
+      fill="none"
+      height="15"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="15"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m9 18 6-6-6-6"
+      />
+    </svg>
+  </a>
+</div>
+`;
