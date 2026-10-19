@@ -102,7 +102,7 @@ const Index = () => {
 
   // Use sections from API, fallback to default order
   // Optimized order: Banner → Flash Sale → Categories → Promos → Trending
-  const sections = data?.sections ?? [
+  const sections = data?.sections?.length ? data.sections : [
     { id: "1", section_type: "banner", title: "Hero Banner", sort_order: 0, active: true, config: {}, subtitle: null },
     { id: "5", section_type: "flash_sale", title: "Flash Sale", sort_order: 1, active: true, config: {}, subtitle: null },
     { id: "2", section_type: "category_grid", title: "Categories", sort_order: 2, active: true, config: { mobile_only: true }, subtitle: null },

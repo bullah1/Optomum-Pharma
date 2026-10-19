@@ -28,7 +28,7 @@ export default defineConfig(({ mode }) => ({
         importScripts: ["/sw-custom.js"],
         runtimeCaching: [
           {
-            urlPattern: /^https:\/\/efmloudxldijshwgcdfl\.supabase\.co\/.*/i,
+            urlPattern: /^https:\/\/pjlygfpltmkbvmkenfku\.supabase\.co\/.*/i,
             handler: "NetworkFirst",
             options: {
               cacheName: "supabase-api",

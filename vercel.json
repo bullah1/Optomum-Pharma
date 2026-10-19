@@ -19,7 +19,7 @@
     }
   ],
   "rewrites": [
-    { "source": "/sitemap.xml", "destination": "https://efmloudxldijshwgcdfl.supabase.co/functions/v1/sitemap-xml" },
+    { "source": "/sitemap.xml", "destination": "https://pjlygfpltmkbvmkenfku.supabase.co/functions/v1/sitemap-xml" },
     {
       "source": "/:path*",
       "has": [
@@ -29,7 +29,7 @@
           "value": ".*(Googlebot|Bingbot|Slurp|DuckDuckBot|Baiduspider|YandexBot|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Applebot|SemrushBot|AhrefsBot|MJ12bot|DotBot|Discordbot|TelegramBot).*"
         }
       ],
-      "destination": "https://efmloudxldijshwgcdfl.supabase.co/functions/v1/render-html?path=/:path*"
+      "destination": "https://pjlygfpltmkbvmkenfku.supabase.co/functions/v1/render-html?path=/:path*"
     },
     { "source": "/((?!assets|favicon|pwa-|sw-|manifest|robots|sitemap|fonts).*)", "destination": "/index.html" }
   ]
