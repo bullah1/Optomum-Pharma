@@ -46,7 +46,7 @@ const BrandLogo = ({ size = "md", showTagline = false }: BrandLogoProps) => {
         </span>
         {showTagline && (
           <span className={`${subSize} text-muted-foreground leading-tight mt-0.5`}>
-            আপনার স্বাস্থ্যসেবায় বিশ্বস্ত সঙ্গী
+            Herbal & Ayurvedic Medicines
           </span>
         )}
       </span>

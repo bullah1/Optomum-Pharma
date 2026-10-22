@@ -51,7 +51,8 @@ const SidebarNav = memo(() => {
         </Link>
       </div>
 
-      {/* Flash Sale */}
+      {/* Flash Sale — only when a sale is running */}
+      {flashSaleCount > 0 && (
       <Link to="/" className="flex items-center gap-2 px-2.5 py-2 rounded-xl hover:bg-secondary/50 transition-colors">
         <Zap size={16} className="text-accent fill-accent shrink-0" />
         <span className="text-[13px] font-black text-foreground tracking-wide italic">
@@ -62,6 +63,7 @@ const SidebarNav = memo(() => {
         </span>
         <ChevronRight size={14} className="text-muted-foreground ml-auto" />
       </Link>
+      )}
 
       {/* Categories */}
       {isLoading || !categories ? (

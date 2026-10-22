@@ -19,16 +19,18 @@ const fallbackSlides = [
   {
     image_url: heroPharmacist,
     eyebrow: "Optimum HLB · Index Laboratories",
-    title: "অরিজিনাল হারবাল ওষুধ",
-    highlight: "MRP থেকে ১০% ছাড়",
-    subtitle: "লগইন ছাড়াই অর্ডার • ক্যাশ অন ডেলিভারি • সারা বাংলাদেশে ডেলিভারি",
-    cta_text: "অর্ডার করুন",
+    title: "Herbal medicine,",
+    highlight: "crafted with care",
+    subtitle: "Authentic herbal and Ayurvedic medicines, delivered nationwide.",
+    cta_text: "Explore products",
     cta_link: "/categories",
     overlay: true,
   },
 ];
 
-const HeroBanner = () => {
+import CorporateHero from "@/components/CorporateHero";
+
+const BannerCarousel = () => {
   const queryClient = useQueryClient();
   const cachedBanners = queryClient.getQueryData<any[]>(["homepage-banners"]);
 
@@ -181,6 +183,13 @@ const HeroBanner = () => {
       )}
     </section>
   );
+};
+
+const HeroBanner = () => {
+  const queryClient = useQueryClient();
+  const cachedBanners = queryClient.getQueryData<any[]>(["homepage-banners"]);
+  // Admin-uploaded banners show as a carousel; otherwise the corporate hero
+  return cachedBanners && cachedBanners.length > 0 ? <BannerCarousel /> : <CorporateHero />;
 };
 
 export default HeroBanner;

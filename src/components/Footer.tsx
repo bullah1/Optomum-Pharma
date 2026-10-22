@@ -28,7 +28,7 @@ const Footer = forwardRef<HTMLElement>((_props, ref) => {
               <img src={siteLogo || "/images/optimum-logo.jpg"} alt={siteName} className="h-10 object-contain" />
             </div>
             <p className="text-[13px] text-muted-foreground leading-relaxed">
-              সারা বাংলাদেশে দ্রুত ওষুধ ডেলিভারি। আপনার স্বাস্থ্যসেবায় বিশ্বস্ত সঙ্গী।
+              Official online store of Optimum Pharmaceuticals HLB — authentic herbal and Ayurvedic medicines, delivered nationwide.
             </p>
 
             <h4 className="text-xs font-semibold text-foreground uppercase tracking-wider mt-5 mb-3">We Accept</h4>

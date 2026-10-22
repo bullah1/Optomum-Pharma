@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { Phone, Upload, Tag, ChevronRight } from "lucide-react";
+import { Phone, Upload } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useQueryClient } from "@tanstack/react-query";
 
@@ -24,8 +24,8 @@ const QuickActions = memo(() => {
             <Phone size={16} className="text-white" strokeWidth={2.5} />
           </div>
           <div className="min-w-0">
-            <span className="block text-[12.5px] font-bold leading-tight">Call to Order</span>
-            <span className="block text-[10px] text-white/85 mt-0.5 leading-tight">24/7 Hotline</span>
+            <span className="block text-[12.5px] font-bold leading-tight">Call to order</span>
+            <span className="block text-[10px] text-white/85 mt-0.5 leading-tight">01306383938</span>
           </div>
         </a>
         <Link
@@ -36,26 +36,12 @@ const QuickActions = memo(() => {
             <Upload size={16} className="text-white" strokeWidth={2.5} />
           </div>
           <div className="min-w-0">
-            <span className="block text-[12.5px] font-bold leading-tight">Upload Rx</span>
-            <span className="block text-[10px] text-white/85 mt-0.5 leading-tight">Get Medicine</span>
+            <span className="block text-[12.5px] font-bold leading-tight">Prescription</span>
+            <span className="block text-[10px] text-white/85 mt-0.5 leading-tight">Upload & order</span>
           </div>
         </Link>
       </div>
 
-      {/* Discount banner — same card system */}
-      <Link
-        to="/categories"
-        className={`${CARD_BASE} flex items-center gap-2.5 px-3 py-2.5 bg-emerald-50/70 border-emerald-100 group`}
-      >
-        <div className="w-9 h-9 rounded-lg bg-emerald-500 flex items-center justify-center shrink-0 shadow-sm">
-          <Tag size={15} className="text-white" />
-        </div>
-        <div className="flex-1 min-w-0">
-          <p className="text-[12px] font-semibold text-foreground leading-tight">সব প্রোডাক্টে MRP থেকে ১০% ছাড়</p>
-          <p className="text-[9.5px] text-muted-foreground mt-0.5 leading-tight">লগইন ছাড়াই অর্ডার · ক্যাশ অন ডেলিভারি</p>
-        </div>
-        <ChevronRight size={15} className="text-muted-foreground/50 group-active:translate-x-0.5 transition-transform" />
-      </Link>
     </div>
   );
 });

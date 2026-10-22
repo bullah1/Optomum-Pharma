@@ -219,18 +219,18 @@ const CartPage = () => {
         {!user && (
           <div className="bg-primary/5 border border-primary/20 rounded-2xl p-3.5">
             <p className="text-xs font-bold text-foreground flex items-center gap-1.5">
-              <ShieldCheck size={14} className="text-primary" /> লগইন ছাড়াই অর্ডার করুন
+              <ShieldCheck size={14} className="text-primary" /> Quick checkout — no account required
             </p>
             <p className="text-[11px] text-muted-foreground mt-1">
-              পরের ধাপে শুধু নাম, মোবাইল নম্বর ও ঠিকানা দিন। ক্যাশ অন ডেলিভারি — পণ্য হাতে পেয়ে টাকা দিন।
+              Enter your name, mobile number and delivery address on the next step. Pay in cash on delivery.
             </p>
             {hasRxItem && (
               <p className="text-[11px] text-destructive font-medium mt-1.5">
-                কার্টে প্রেসক্রিপশন লাগে এমন ওষুধ আছে — এর জন্য লগইন করতে হবে।
+                Your cart contains a prescription medicine. Please sign in to order it.
               </p>
             )}
             <Link to="/auth?redirect=/cart" className="inline-block mt-2 text-[11px] font-semibold text-primary underline">
-              আগে অর্ডার করেছেন? লগইন করুন
+              Have an account? Sign in
             </Link>
           </div>
         )}
@@ -342,7 +342,7 @@ const CartPage = () => {
           <div className="flex justify-between text-xs">
             <span className="text-muted-foreground flex items-center gap-1"><Truck size={11} /> Delivery</span>
             <span className={`font-medium ${deliveryCharge > 0 ? "text-foreground" : "text-primary"}`}>
-              {selectedAddress ? `৳${deliveryCharge}` : user ? "Add address" : "ঢাকা ৳৭০ · বাইরে ৳১৩০"}
+              {selectedAddress ? `৳${deliveryCharge}` : user ? "Add address" : "Dhaka ৳70 · Outside ৳130"}
             </span>
           </div>
           <div className="border-t border-border pt-2 flex justify-between font-bold">
@@ -372,7 +372,7 @@ const CartPage = () => {
           <button
             onClick={() => {
               if (!user) {
-                if (hasRxItem) { toast.error("প্রেসক্রিপশন ওষুধের জন্য লগইন করুন"); navigate("/auth?redirect=/cart"); return; }
+                if (hasRxItem) { toast.error("Please sign in to order prescription medicines"); navigate("/auth?redirect=/cart"); return; }
                 navigate("/checkout", { state: { guest: true } });
                 return;
               }
@@ -385,7 +385,7 @@ const CartPage = () => {
             }}
             className="bg-primary text-primary-foreground px-7 py-3 rounded-xl font-bold text-sm active:scale-95 transition-transform shadow-lg shadow-primary/20"
           >
-            {!user ? "অর্ডার করুন →" : selectedAddress ? "Checkout →" : "Add Address →"}
+            {!user ? "Proceed to checkout →" : selectedAddress ? "Checkout →" : "Add Address →"}
           </button>
         </div>
       </div>

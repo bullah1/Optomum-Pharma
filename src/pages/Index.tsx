@@ -89,8 +89,8 @@ const Index = () => {
 
   useSEO(
     {
-      title: "Optimum Pharmaceuticals HLB — হারবাল ও আয়ুর্বেদিক ওষুধ অনলাইনে | Optimum & Index Laboratories",
-      description: "Optimum Pharmaceuticals HLB ও Index Laboratories-এর অরিজিনাল হারবাল, আয়ুর্বেদিক ও ইউনানি ওষুধ অনলাইনে অর্ডার করুন। লগইন ছাড়াই অর্ডার, ক্যাশ অন ডেলিভারি, সারা বাংলাদেশে ডেলিভারি।",
+      title: "Optimum Pharmaceuticals HLB — Herbal & Ayurvedic Medicines | Official Online Store",
+      description: "Official online store of Optimum Pharmaceuticals HLB and Index Laboratories. Authentic herbal, Ayurvedic and nutraceutical medicines with cash on delivery across Bangladesh. অপটিমাম ও ইনডেক্স ল্যাবরেটরিজের অরিজিনাল হারবাল ওষুধ।",
       canonical: "https://optimumpharmahlb.com/",
     },
     [
@@ -172,7 +172,7 @@ const Index = () => {
                         <div key={section.id} className={`${wrapClass} ${isMobileOnly ? "md:hidden" : ""}`}>
                           {showCategoryHeader && (
                             <div className="flex items-center justify-between px-1 mb-3">
-                              <h1 className="text-base font-bold text-foreground">সমস্যা অনুযায়ী খুঁজুন · Shop by Need</h1>
+                              <h2 className="text-base font-bold text-foreground">Shop by health need</h2>
                               <Link to="/categories" className="text-[11px] font-semibold text-primary bg-primary/5 px-3 py-1.5 rounded-full hover:bg-primary/10 transition-colors">
                                 All Categories
                               </Link>

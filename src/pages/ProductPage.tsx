@@ -295,7 +295,7 @@ const ProductPage = () => {
                   { Icon: ShieldCheck, label: "100% Authentic", color: "text-emerald-500" },
                   { Icon: Truck, label: "Fast Home Delivery", color: "text-blue-500" },
                   { Icon: RotateCcw, label: "Easy Returns & Refunds", color: "text-orange-500" },
-                  { Icon: Lock, label: "Cash on Delivery · No login needed", color: "text-violet-500" },
+                  { Icon: Lock, label: "Cash on Delivery", color: "text-violet-500" },
                   { Icon: Pill, label: "Licensed Pharmacy", color: "text-rose-500" },
                 ].map((b) => (
                   <div key={b.label} className="flex items-center gap-2.5">

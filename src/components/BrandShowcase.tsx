@@ -8,7 +8,7 @@ const BRANDS = [
   {
     name: "Optimum Pharmaceuticals HLB",
     slug: "optimum-pharmaceuticals-hlb",
-    tagline: "হারবাল ও নিউট্রাসিউটিক্যাল · Herbal & Nutraceuticals",
+    tagline: "Herbal & nutraceutical medicines",
     logo: "/images/optimum-mark.png",
     initial: "O",
     color: "#F8931D",
@@ -17,7 +17,7 @@ const BRANDS = [
   {
     name: "Index Laboratories Ltd",
     slug: "index-laboratories-ltd",
-    tagline: "আয়ুর্বেদিক ও ইউনানি · Ayurvedic & Unani",
+    tagline: "Ayurvedic & Unani medicines",
     logo: null as string | null,
     initial: "I",
     color: "#01AEF2",
@@ -35,9 +35,9 @@ const BrandShowcase = memo(() => {
   const countFor = (name: string) => brands?.find((b) => b.name === name)?.count;
 
   return (
-    <section aria-labelledby="brands-heading">
+    <section id="our-brands" aria-labelledby="brands-heading" className="scroll-mt-24">
       <h2 id="brands-heading" className="text-base font-bold text-foreground px-1 mb-3">
-        আমাদের কোম্পানি · Our Brands
+        Our brands
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {BRANDS.map((b) => {
@@ -64,7 +64,7 @@ const BrandShowcase = memo(() => {
                 </p>
                 <p className="text-[11px] text-muted-foreground mt-0.5 line-clamp-1">{b.tagline}</p>
                 <p className="text-[11px] font-semibold mt-1" style={{ color: b.color }}>
-                  {count ? `${count}টি প্রোডাক্ট দেখুন` : "সব প্রোডাক্ট দেখুন"}
+                  {count ? `View ${count} products` : "View products"}
                 </p>
               </div>
               <ChevronRight size={18} className="text-muted-foreground group-hover:translate-x-0.5 transition-transform shrink-0" />

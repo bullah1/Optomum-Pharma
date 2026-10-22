@@ -59,7 +59,7 @@ const WhyChooseUs = () => {
       <div className="bg-muted/15 rounded-xl pt-4 pb-3 px-3 space-y-3 border border-border">
         <div className="flex flex-col items-center gap-1.5">
           <img src={siteLogo || "/images/optimum-logo.jpg"} alt={siteName} className="h-10 object-contain" />
-          <p className="text-[9px] text-muted-foreground leading-none">আপনার স্বাস্থ্যসেবায় বিশ্বস্ত সঙ্গী</p>
+          <p className="text-[9px] text-muted-foreground leading-none">Herbal & Ayurvedic Medicines</p>
         </div>
 
         {/* Links Grid - tighter */}

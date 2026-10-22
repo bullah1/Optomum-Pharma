@@ -221,7 +221,7 @@ const CompanyPage = () => {
               <Pill size={32} className="text-primary/40" />
             </div>
             <p className="text-muted-foreground text-sm">
-              {search ? "কোনো পণ্য পাওয়া যায়নি।" : "এই কোম্পানির কোনো পণ্য নেই।"}
+              {search ? "No products match your search." : "No products available yet."}
             </p>
           </div>
         ) : (

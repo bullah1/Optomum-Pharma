@@ -9,16 +9,16 @@ import ProductCard from "@/components/product/ProductCard";
 /* ── Health-concern band styles (keyed by category name) ── */
 type BandConfig = { categoryName: string; title: string; icon: any; accent: string; bg: string };
 const BAND_STYLES: Record<string, Omit<BandConfig, "categoryName">> = {
-  "Diabetes & Heart": { title: "ডায়াবেটিস ও হার্ট · Diabetes & Heart", icon: Heart, accent: "#e11d48", bg: "" },
-  "Digestion & Liver": { title: "হজম ও লিভার · Digestion & Liver", icon: Leaf, accent: "#16a34a", bg: "" },
-  "Brain & Energy": { title: "মস্তিষ্ক ও শক্তি · Brain & Energy", icon: Sparkles, accent: "#F8931D", bg: "" },
-  "Immunity & Nutrition": { title: "রোগ প্রতিরোধ ও পুষ্টি · Immunity", icon: Apple, accent: "#01AEF2", bg: "" },
-  "Men's Health": { title: "পুরুষের স্বাস্থ্য · Men's Health", icon: Stethoscope, accent: "#2563eb", bg: "" },
-  "Women's Health": { title: "নারীর স্বাস্থ্য · Women's Health", icon: Baby, accent: "#ec4899", bg: "" },
-  "Joint & Bone": { title: "হাড় ও জয়েন্ট · Joint & Bone", icon: Layers, accent: "#7c3aed", bg: "" },
-  "Cough & Respiratory": { title: "কাশি ও শ্বাসতন্ত্র · Cough", icon: FlaskConical, accent: "#0891b2", bg: "" },
-  "Kidney, Skin & Blood": { title: "কিডনি, ত্বক ও রক্ত · Kidney & Skin", icon: Pill, accent: "#0d9488", bg: "" },
-  "Personal Care": { title: "পার্সোনাল কেয়ার · Personal Care", icon: Home, accent: "#84cc16", bg: "" },
+  "Diabetes & Heart": { title: "Diabetes & Heart", icon: Heart, accent: "#e11d48", bg: "" },
+  "Digestion & Liver": { title: "Digestion & Liver", icon: Leaf, accent: "#16a34a", bg: "" },
+  "Brain & Energy": { title: "Brain & Energy", icon: Sparkles, accent: "#F8931D", bg: "" },
+  "Immunity & Nutrition": { title: "Immunity & Nutrition", icon: Apple, accent: "#01AEF2", bg: "" },
+  "Men's Health": { title: "Men's Health", icon: Stethoscope, accent: "#2563eb", bg: "" },
+  "Women's Health": { title: "Women's Health", icon: Baby, accent: "#ec4899", bg: "" },
+  "Joint & Bone": { title: "Joint & Bone", icon: Layers, accent: "#7c3aed", bg: "" },
+  "Cough & Respiratory": { title: "Cough & Respiratory", icon: FlaskConical, accent: "#0891b2", bg: "" },
+  "Kidney, Skin & Blood": { title: "Kidney, Skin & Blood", icon: Pill, accent: "#0d9488", bg: "" },
+  "Personal Care": { title: "Personal Care", icon: Home, accent: "#84cc16", bg: "" },
 };
 const bandConfigFor = (name: string): BandConfig => ({
   categoryName: name,

@@ -138,13 +138,13 @@ const CheckoutPage = () => {
 
   const handleGuestSubmit = async () => {
     const phone = guest.phone.replace(/[^0-9]/g, "").replace(/^88/, "");
-    if (guest.name.trim().length < 2) { toast.error("আপনার নাম লিখুন"); return; }
-    if (!/^01[3-9][0-9]{8}$/.test(phone)) { toast.error("সঠিক মোবাইল নম্বর দিন (01XXXXXXXXX)"); return; }
-    if (!guest.division || !guest.district) { toast.error("বিভাগ ও জেলা নির্বাচন করুন"); return; }
-    if (guest.address.trim().length < 5) { toast.error("পূর্ণ ঠিকানা লিখুন (বাসা/রোড/এলাকা)"); return; }
+    if (guest.name.trim().length < 2) { toast.error("Please enter your name"); return; }
+    if (!/^01[3-9][0-9]{8}$/.test(phone)) { toast.error("Please enter a valid mobile number (01XXXXXXXXX)"); return; }
+    if (!guest.division || !guest.district) { toast.error("Please select your division and district"); return; }
+    if (guest.address.trim().length < 5) { toast.error("Please enter your full address"); return; }
     const productItems = items.filter((i) => !i.item_type || i.item_type === "product");
     if (productItems.some((i) => i.requires_prescription)) {
-      toast.error("প্রেসক্রিপশন ওষুধের জন্য লগইন করুন");
+      toast.error("Please sign in to order prescription medicines");
       navigate("/auth?redirect=/cart");
       return;
     }
@@ -172,9 +172,9 @@ const CheckoutPage = () => {
       setPlacedOrderId(orderId);
       setStep("success");
       clearCart();
-      toast.success("অর্ডার সফল হয়েছে!");
+      toast.success("Order placed successfully");
     } catch (error: any) {
-      toast.error(error?.message || "অর্ডার করা যায়নি, আবার চেষ্টা করুন");
+      toast.error(error?.message || "We could not place your order. Please try again.");
     } finally {
       setOrderLoading(false);
     }
@@ -331,19 +331,19 @@ const CheckoutPage = () => {
         <PageTopBar title="Order Confirmed" showCart={false} />
         <main className="container py-16 flex flex-col items-center gap-5 text-center max-w-md mx-auto">
           <CheckCircle size={48} className="text-green-500" />
-          <h2 className="text-xl font-bold text-foreground">অর্ডার সফল হয়েছে!</h2>
+          <h2 className="text-xl font-bold text-foreground">Thank you for your order</h2>
           {placedOrderId && (
             <p className="text-sm text-foreground">
-              অর্ডার নম্বর: <span className="font-bold text-primary">#{placedOrderId.slice(0, 8).toUpperCase()}</span>
+              Order number: <span className="font-bold text-primary">#{placedOrderId.slice(0, 8).toUpperCase()}</span>
             </p>
           )}
           <p className="text-sm text-muted-foreground">
-            আমাদের প্রতিনিধি শীঘ্রই আপনাকে ফোন করে অর্ডার কনফার্ম করবেন। যেকোনো প্রয়োজনে কল করুন।
+            Our team will call you shortly to confirm your order. For any assistance, please call us.
           </p>
           <a href="tel:01306383938" className="flex items-center gap-2 border border-primary/30 text-primary px-6 py-2.5 rounded-lg font-semibold text-sm">
             <Phone size={15} /> 01306383938
           </a>
-          <Link to="/" className="bg-primary text-primary-foreground px-6 py-2.5 rounded-lg font-semibold text-sm">আরও কেনাকাটা করুন</Link>
+          <Link to="/" className="bg-primary text-primary-foreground px-6 py-2.5 rounded-lg font-semibold text-sm">Continue shopping</Link>
         </main>
         <MobileBottomNav />
       </div>
@@ -360,37 +360,37 @@ const CheckoutPage = () => {
             <div className="bg-card rounded-xl border border-primary/30 overflow-hidden">
               <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-primary/5">
                 <MapPin size={15} className="text-primary" />
-                <h3 className="text-sm font-bold text-foreground">ডেলিভারি তথ্য</h3>
-                <Link to="/auth?redirect=/cart" className="ml-auto text-[11px] font-semibold text-primary underline">লগইন</Link>
+                <h3 className="text-sm font-bold text-foreground">Delivery details</h3>
+                <Link to="/auth?redirect=/cart" className="ml-auto text-[11px] font-semibold text-primary underline">Sign in</Link>
               </div>
               <div className="p-4 space-y-3">
-                <input type="text" autoComplete="name" placeholder="আপনার নাম *" value={guest.name} onChange={(e) => setG("name", e.target.value)} maxLength={80}
+                <input type="text" autoComplete="name" placeholder="Full name *" value={guest.name} onChange={(e) => setG("name", e.target.value)} maxLength={80}
                   className="w-full px-3 py-2.5 rounded-lg border border-border bg-transparent text-sm outline-none focus:ring-1 focus:ring-primary/40" required />
-                <input type="tel" inputMode="numeric" autoComplete="tel" placeholder="মোবাইল নম্বর * (01XXXXXXXXX)" value={guest.phone} onChange={(e) => setG("phone", e.target.value)} maxLength={14}
+                <input type="tel" inputMode="numeric" autoComplete="tel" placeholder="Mobile number * (01XXXXXXXXX)" value={guest.phone} onChange={(e) => setG("phone", e.target.value)} maxLength={14}
                   className="w-full px-3 py-2.5 rounded-lg border border-border bg-transparent text-sm outline-none focus:ring-1 focus:ring-primary/40" required />
                 <div className="grid grid-cols-2 gap-3">
                   <select value={guest.division} onChange={(e) => setG("division", e.target.value)} required
                     className="w-full px-3 py-2.5 rounded-lg border border-border bg-background text-sm outline-none focus:ring-1 focus:ring-primary/40">
-                    <option value="">বিভাগ *</option>
+                    <option value="">Division *</option>
                     {getDivisions().map((d) => <option key={d} value={d}>{d}</option>)}
                   </select>
                   <select value={guest.district} onChange={(e) => setG("district", e.target.value)} required disabled={!guest.division}
                     className="w-full px-3 py-2.5 rounded-lg border border-border bg-background text-sm outline-none focus:ring-1 focus:ring-primary/40 disabled:opacity-50">
-                    <option value="">জেলা *</option>
+                    <option value="">District *</option>
                     {getDistricts(guest.division).map((d) => <option key={d} value={d}>{d}</option>)}
                   </select>
                 </div>
                 {guest.district && getUpazilas(guest.division, guest.district).length > 0 && (
                   <select value={guest.upazila} onChange={(e) => setG("upazila", e.target.value)}
                     className="w-full px-3 py-2.5 rounded-lg border border-border bg-background text-sm outline-none focus:ring-1 focus:ring-primary/40">
-                    <option value="">উপজেলা / থানা</option>
+                    <option value="">Upazila / Thana</option>
                     {getUpazilas(guest.division, guest.district).map((u) => <option key={u} value={u}>{u}</option>)}
                   </select>
                 )}
-                <textarea placeholder="পূর্ণ ঠিকানা * (বাসা, রোড, এলাকা)" value={guest.address} onChange={(e) => setG("address", e.target.value)} rows={2} maxLength={300}
+                <textarea placeholder="Full address * (house, road, area)" value={guest.address} onChange={(e) => setG("address", e.target.value)} rows={2} maxLength={300}
                   className="w-full px-3 py-2.5 rounded-lg border border-border bg-transparent text-sm outline-none focus:ring-1 focus:ring-primary/40 resize-none" required />
                 <p className="text-[11px] text-muted-foreground flex items-center gap-1">
-                  <Truck size={12} className="text-primary" /> ডেলিভারি চার্জ: ঢাকা সিটি ৳৭০ · ঢাকার বাইরে ৳১৩০
+                  <Truck size={12} className="text-primary" /> Delivery charge: Dhaka city ৳70 · Outside Dhaka ৳130
                 </p>
               </div>
             </div>
@@ -493,7 +493,7 @@ const CheckoutPage = () => {
               )}
               <div className="flex justify-between">
                 <span className="text-muted-foreground">Delivery</span>
-                <span className="font-medium text-foreground text-[11px]">{isGuest && !guest.district ? "জেলা নির্বাচন করুন" : `৳${deliveryCharge}`}</span>
+                <span className="font-medium text-foreground text-[11px]">{isGuest && !guest.district ? "Select district" : `৳${deliveryCharge}`}</span>
               </div>
               <div className="border-t border-border pt-3 flex justify-between font-bold text-sm">
                 <span className="text-foreground">Total</span>

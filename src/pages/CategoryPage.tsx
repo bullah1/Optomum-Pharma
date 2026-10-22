@@ -194,9 +194,9 @@ const CategoryPage = () => {
             <div className="w-20 h-20 rounded-xl bg-primary/8 flex items-center justify-center mx-auto mb-4">
               <span className="text-4xl">📦</span>
             </div>
-            <p className="text-muted-foreground">এই ক্যাটাগরিতে এখনও কোনো পণ্য নেই।</p>
+            <p className="text-muted-foreground">No products in this category yet.</p>
             <Link to="/" className="text-primary text-sm font-medium hover:underline mt-2 inline-block">
-              হোমে ফিরে যান
+              Back to home
             </Link>
           </div>
         ) : (
@@ -206,7 +206,7 @@ const CategoryPage = () => {
             <div className="flex-1 min-w-0">
               {medicines.length === 0 ? (
                 <div className="text-center py-12">
-                  <p className="text-muted-foreground text-sm">ফিল্টার অনুযায়ী কোনো পণ্য পাওয়া যায়নি।</p>
+                  <p className="text-muted-foreground text-sm">No products match these filters.</p>
                 </div>
               ) : (
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-2">
@@ -225,7 +225,7 @@ const CategoryPage = () => {
                   </div>
                 )}
                 {!hasNextPage && allMedicines.length > PAGE_SIZE && (
-                  <p className="text-xs text-muted-foreground">সব পণ্য দেখানো হয়েছে</p>
+                  <p className="text-xs text-muted-foreground">You have seen all products</p>
                 )}
               </div>
             </div>
