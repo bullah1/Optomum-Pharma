@@ -18,11 +18,11 @@ if (typeof window !== "undefined") {
 const fallbackSlides = [
   {
     image_url: heroPharmacist,
-    eyebrow: "Trusted Online Pharmacy",
-    title: "Get Medicines Delivered",
-    highlight: "Within 24 Hours",
-    subtitle: "Verified medicines • Licensed pharmacists • Free home delivery",
-    cta_text: "Order Now",
+    eyebrow: "Optimum HLB · Index Laboratories",
+    title: "অরিজিনাল হারবাল ওষুধ",
+    highlight: "MRP থেকে ১০% ছাড়",
+    subtitle: "লগইন ছাড়াই অর্ডার • ক্যাশ অন ডেলিভারি • সারা বাংলাদেশে ডেলিভারি",
+    cta_text: "অর্ডার করুন",
     cta_link: "/categories",
     overlay: true,
   },

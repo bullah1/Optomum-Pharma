@@ -12,6 +12,8 @@ import PageTopBar from "@/components/PageTopBar";
 import MobileBottomNav from "@/components/MobileBottomNav";
 import Footer from "@/components/Footer";
 import type { ShippingAddress } from "@/components/ShippingAddressDialog";
+import { getDivisions, getDistricts, getUpazilas, getDeliveryCharge } from "@/data/bangladeshLocations";
+import { MapPin, Phone } from "lucide-react";
 
 import payBkash from "@/assets/payment-bkash.png";
 import payNagad from "@/assets/payment-nagad.png";
@@ -52,6 +54,12 @@ const CheckoutPage = () => {
   const [patientGender, setPatientGender] = useState("male");
   const [couponCode, setCouponCode] = useState("");
   const [couponLoading, setCouponLoading] = useState(false);
+  // Guest checkout (no login)
+  const isGuest = !user;
+  const [placedOrderId, setPlacedOrderId] = useState<string | null>(null);
+  const [guest, setGuest] = useState({ name: "", phone: "", division: "", district: "", upazila: "", address: "" });
+  const setG = (k: keyof typeof guest, v: string) =>
+    setGuest((g) => ({ ...g, [k]: v, ...(k === "division" ? { district: "", upazila: "" } : k === "district" ? { upazila: "" } : {}) }));
   const [appliedCoupon, setAppliedCoupon] = useState<{
     id: string; code: string; discount_type: string; discount_value: number; max_discount: number | null;
   } | null>(null);
@@ -72,12 +80,14 @@ const CheckoutPage = () => {
   });
 
   useEffect(() => {
-    if (!addressId && step === "form") {
+    if (user && !addressId && step === "form") {
       navigate("/cart");
     }
-  }, [addressId, navigate, step]);
+  }, [addressId, navigate, step, user]);
 
-  const deliveryCharge = selectedAddress?.delivery_charge ?? 0;
+  const deliveryCharge = isGuest
+    ? (guest.division && guest.district ? getDeliveryCharge(guest.division, guest.district) : 0)
+    : selectedAddress?.delivery_charge ?? 0;
 
   const originalTotal = items.reduce((sum, item) => {
     const orig = item.original_price || item.price;
@@ -126,9 +136,53 @@ const CheckoutPage = () => {
     } catch { toast.error("Failed to apply coupon"); } finally { setCouponLoading(false); }
   };
 
+  const handleGuestSubmit = async () => {
+    const phone = guest.phone.replace(/[^0-9]/g, "").replace(/^88/, "");
+    if (guest.name.trim().length < 2) { toast.error("আপনার নাম লিখুন"); return; }
+    if (!/^01[3-9][0-9]{8}$/.test(phone)) { toast.error("সঠিক মোবাইল নম্বর দিন (01XXXXXXXXX)"); return; }
+    if (!guest.division || !guest.district) { toast.error("বিভাগ ও জেলা নির্বাচন করুন"); return; }
+    if (guest.address.trim().length < 5) { toast.error("পূর্ণ ঠিকানা লিখুন (বাসা/রোড/এলাকা)"); return; }
+    const productItems = items.filter((i) => !i.item_type || i.item_type === "product");
+    if (productItems.some((i) => i.requires_prescription)) {
+      toast.error("প্রেসক্রিপশন ওষুধের জন্য লগইন করুন");
+      navigate("/auth?redirect=/cart");
+      return;
+    }
+    setOrderLoading(true);
+    try {
+      const utm = getStoredUTM();
+      const { data, error } = await supabase.rpc("place_guest_order" as any, {
+        p_name: guest.name.trim(),
+        p_phone: phone,
+        p_division: guest.division,
+        p_district: guest.district,
+        p_upazila: guest.upazila || null,
+        p_address: guest.address.trim(),
+        p_items: productItems.map((i) => ({ id: i.id, qty: i.quantity })),
+        p_payment: selectedPayment,
+        p_coupon: appliedCoupon?.code || null,
+        p_meta: {
+          ...utm,
+          device_type: window.innerWidth < 768 ? "mobile" : window.innerWidth < 1024 ? "tablet" : "desktop",
+        },
+      });
+      if (error) throw error;
+      const orderId = (data as any)?.order_id as string;
+      trackMarketingEvent("order_placed", { order_id: orderId, amount: (data as any)?.total ?? grandTotal, guest: true });
+      setPlacedOrderId(orderId);
+      setStep("success");
+      clearCart();
+      toast.success("অর্ডার সফল হয়েছে!");
+    } catch (error: any) {
+      toast.error(error?.message || "অর্ডার করা যায়নি, আবার চেষ্টা করুন");
+    } finally {
+      setOrderLoading(false);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!user) { toast.error("Please login to place an order"); navigate("/auth?redirect=/checkout"); return; }
+    if (!user) { await handleGuestSubmit(); return; }
     if (!selectedAddress) { toast.error("Please select a shipping address"); navigate("/cart"); return; }
 
     const labItems = items.filter(i => i.item_type === "lab_test" || i.item_type === "lab_package");
@@ -246,6 +300,7 @@ const CheckoutPage = () => {
       }
 
       trackMarketingEvent("order_placed", { order_id: order.id, amount: grandTotal });
+      setPlacedOrderId(order.id);
       setStep("success");
       clearCart();
       toast.success("Order placed successfully!");
@@ -276,9 +331,19 @@ const CheckoutPage = () => {
         <PageTopBar title="Order Confirmed" showCart={false} />
         <main className="container py-16 flex flex-col items-center gap-5 text-center max-w-md mx-auto">
           <CheckCircle size={48} className="text-green-500" />
-          <h2 className="text-xl font-bold text-foreground">Order Placed Successfully!</h2>
-          <p className="text-sm text-muted-foreground">Your order has been received. You will get a confirmation shortly.</p>
-          <Link to="/" className="bg-primary text-primary-foreground px-6 py-2.5 rounded-lg font-semibold text-sm">Continue Shopping</Link>
+          <h2 className="text-xl font-bold text-foreground">অর্ডার সফল হয়েছে!</h2>
+          {placedOrderId && (
+            <p className="text-sm text-foreground">
+              অর্ডার নম্বর: <span className="font-bold text-primary">#{placedOrderId.slice(0, 8).toUpperCase()}</span>
+            </p>
+          )}
+          <p className="text-sm text-muted-foreground">
+            আমাদের প্রতিনিধি শীঘ্রই আপনাকে ফোন করে অর্ডার কনফার্ম করবেন। যেকোনো প্রয়োজনে কল করুন।
+          </p>
+          <a href="tel:01306383938" className="flex items-center gap-2 border border-primary/30 text-primary px-6 py-2.5 rounded-lg font-semibold text-sm">
+            <Phone size={15} /> 01306383938
+          </a>
+          <Link to="/" className="bg-primary text-primary-foreground px-6 py-2.5 rounded-lg font-semibold text-sm">আরও কেনাকাটা করুন</Link>
         </main>
         <MobileBottomNav />
       </div>
@@ -291,6 +356,46 @@ const CheckoutPage = () => {
       <main className="container py-4 max-w-2xl space-y-4">
 
         <form onSubmit={handleSubmit} className="space-y-3">
+          {isGuest && (
+            <div className="bg-card rounded-xl border border-primary/30 overflow-hidden">
+              <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-primary/5">
+                <MapPin size={15} className="text-primary" />
+                <h3 className="text-sm font-bold text-foreground">ডেলিভারি তথ্য</h3>
+                <Link to="/auth?redirect=/cart" className="ml-auto text-[11px] font-semibold text-primary underline">লগইন</Link>
+              </div>
+              <div className="p-4 space-y-3">
+                <input type="text" autoComplete="name" placeholder="আপনার নাম *" value={guest.name} onChange={(e) => setG("name", e.target.value)} maxLength={80}
+                  className="w-full px-3 py-2.5 rounded-lg border border-border bg-transparent text-sm outline-none focus:ring-1 focus:ring-primary/40" required />
+                <input type="tel" inputMode="numeric" autoComplete="tel" placeholder="মোবাইল নম্বর * (01XXXXXXXXX)" value={guest.phone} onChange={(e) => setG("phone", e.target.value)} maxLength={14}
+                  className="w-full px-3 py-2.5 rounded-lg border border-border bg-transparent text-sm outline-none focus:ring-1 focus:ring-primary/40" required />
+                <div className="grid grid-cols-2 gap-3">
+                  <select value={guest.division} onChange={(e) => setG("division", e.target.value)} required
+                    className="w-full px-3 py-2.5 rounded-lg border border-border bg-background text-sm outline-none focus:ring-1 focus:ring-primary/40">
+                    <option value="">বিভাগ *</option>
+                    {getDivisions().map((d) => <option key={d} value={d}>{d}</option>)}
+                  </select>
+                  <select value={guest.district} onChange={(e) => setG("district", e.target.value)} required disabled={!guest.division}
+                    className="w-full px-3 py-2.5 rounded-lg border border-border bg-background text-sm outline-none focus:ring-1 focus:ring-primary/40 disabled:opacity-50">
+                    <option value="">জেলা *</option>
+                    {getDistricts(guest.division).map((d) => <option key={d} value={d}>{d}</option>)}
+                  </select>
+                </div>
+                {guest.district && getUpazilas(guest.division, guest.district).length > 0 && (
+                  <select value={guest.upazila} onChange={(e) => setG("upazila", e.target.value)}
+                    className="w-full px-3 py-2.5 rounded-lg border border-border bg-background text-sm outline-none focus:ring-1 focus:ring-primary/40">
+                    <option value="">উপজেলা / থানা</option>
+                    {getUpazilas(guest.division, guest.district).map((u) => <option key={u} value={u}>{u}</option>)}
+                  </select>
+                )}
+                <textarea placeholder="পূর্ণ ঠিকানা * (বাসা, রোড, এলাকা)" value={guest.address} onChange={(e) => setG("address", e.target.value)} rows={2} maxLength={300}
+                  className="w-full px-3 py-2.5 rounded-lg border border-border bg-transparent text-sm outline-none focus:ring-1 focus:ring-primary/40 resize-none" required />
+                <p className="text-[11px] text-muted-foreground flex items-center gap-1">
+                  <Truck size={12} className="text-primary" /> ডেলিভারি চার্জ: ঢাকা সিটি ৳৭০ · ঢাকার বাইরে ৳১৩০
+                </p>
+              </div>
+            </div>
+          )}
+
           {/* Order Summary */}
           <div className="bg-card rounded-xl border border-border overflow-hidden">
             <div className="flex items-center gap-2 px-4 py-3 border-b border-border">
@@ -388,7 +493,7 @@ const CheckoutPage = () => {
               )}
               <div className="flex justify-between">
                 <span className="text-muted-foreground">Delivery</span>
-                <span className="font-medium text-foreground text-[11px]">৳{deliveryCharge}</span>
+                <span className="font-medium text-foreground text-[11px]">{isGuest && !guest.district ? "জেলা নির্বাচন করুন" : `৳${deliveryCharge}`}</span>
               </div>
               <div className="border-t border-border pt-3 flex justify-between font-bold text-sm">
                 <span className="text-foreground">Total</span>

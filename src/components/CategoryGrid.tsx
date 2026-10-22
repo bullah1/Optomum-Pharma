@@ -75,7 +75,7 @@ const CategoryGrid = memo(() => {
               {hasImage ? (
                 <img src={cat.image_url} alt="" width={38} height={38} className="w-[38px] h-[38px] object-contain" loading="lazy" aria-hidden="true" />
               ) : (
-                <span className={`text-xl ${style.accent}`}>💊</span>
+                <span className={`text-2xl ${style.accent}`}>{cat.icon || "💊"}</span>
               )}
             </div>
             <span className="text-[10.5px] font-medium text-foreground text-center leading-tight line-clamp-2 max-w-[72px]">

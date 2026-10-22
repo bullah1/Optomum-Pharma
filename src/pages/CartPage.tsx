@@ -82,6 +82,7 @@ const CartPage = () => {
   const deliveryCharge = selectedAddress?.delivery_charge ?? 0;
   const grandTotal = totalPrice + deliveryCharge;
 
+  const hasRxItem = items.some(i => i.requires_prescription);
   const productItems = items.filter(i => !i.item_type || i.item_type === "product");
   const labItems = items.filter(i => i.item_type === "lab_test" || i.item_type === "lab_package");
 
@@ -214,7 +215,28 @@ const CartPage = () => {
           </section>
         )}
 
+        {/* Guest: no login needed */}
+        {!user && (
+          <div className="bg-primary/5 border border-primary/20 rounded-2xl p-3.5">
+            <p className="text-xs font-bold text-foreground flex items-center gap-1.5">
+              <ShieldCheck size={14} className="text-primary" /> লগইন ছাড়াই অর্ডার করুন
+            </p>
+            <p className="text-[11px] text-muted-foreground mt-1">
+              পরের ধাপে শুধু নাম, মোবাইল নম্বর ও ঠিকানা দিন। ক্যাশ অন ডেলিভারি — পণ্য হাতে পেয়ে টাকা দিন।
+            </p>
+            {hasRxItem && (
+              <p className="text-[11px] text-destructive font-medium mt-1.5">
+                কার্টে প্রেসক্রিপশন লাগে এমন ওষুধ আছে — এর জন্য লগইন করতে হবে।
+              </p>
+            )}
+            <Link to="/auth?redirect=/cart" className="inline-block mt-2 text-[11px] font-semibold text-primary underline">
+              আগে অর্ডার করেছেন? লগইন করুন
+            </Link>
+          </div>
+        )}
+
         {/* Shipping Address — Simplified */}
+        {user && (
         <div className="bg-card rounded-2xl border border-border overflow-hidden">
           <div className="p-3.5">
             <h3 className="text-xs font-bold text-foreground mb-2.5 flex items-center gap-1.5">
@@ -280,6 +302,7 @@ const CartPage = () => {
             </button>
           </div>
         </div>
+        )}
 
         {/* Coupon */}
         <button onClick={() => setCouponOpen(!couponOpen)} className="w-full bg-card rounded-2xl border border-border p-3.5 flex items-center justify-between">
@@ -319,7 +342,7 @@ const CartPage = () => {
           <div className="flex justify-between text-xs">
             <span className="text-muted-foreground flex items-center gap-1"><Truck size={11} /> Delivery</span>
             <span className={`font-medium ${deliveryCharge > 0 ? "text-foreground" : "text-primary"}`}>
-              {selectedAddress ? `৳${deliveryCharge}` : "Add address"}
+              {selectedAddress ? `৳${deliveryCharge}` : user ? "Add address" : "ঢাকা ৳৭০ · বাইরে ৳১৩০"}
             </span>
           </div>
           <div className="border-t border-border pt-2 flex justify-between font-bold">
@@ -348,8 +371,12 @@ const CartPage = () => {
           </div>
           <button
             onClick={() => {
+              if (!user) {
+                if (hasRxItem) { toast.error("প্রেসক্রিপশন ওষুধের জন্য লগইন করুন"); navigate("/auth?redirect=/cart"); return; }
+                navigate("/checkout", { state: { guest: true } });
+                return;
+              }
               if (!selectedAddress) {
-                if (!user) { navigate("/auth?redirect=/cart"); return; }
                 toast.error("Please add a delivery address");
                 setAddressDialogOpen(true);
                 return;
@@ -358,7 +385,7 @@ const CartPage = () => {
             }}
             className="bg-primary text-primary-foreground px-7 py-3 rounded-xl font-bold text-sm active:scale-95 transition-transform shadow-lg shadow-primary/20"
           >
-            {selectedAddress ? "Checkout →" : "Add Address →"}
+            {!user ? "অর্ডার করুন →" : selectedAddress ? "Checkout →" : "Add Address →"}
           </button>
         </div>
       </div>

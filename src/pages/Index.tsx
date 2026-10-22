@@ -17,6 +17,9 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import HeroBanner from "@/components/HeroBanner";
 import CategoryGrid from "@/components/CategoryGrid";
 import QuickActions from "@/components/QuickActions";
+import BrandShowcase from "@/components/BrandShowcase";
+import OrderPromise from "@/components/OrderPromise";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 // Lazy load below-the-fold components
 const PromoCards = lazy(() => import("@/components/PromoCards"));
@@ -24,9 +27,6 @@ const FlashSaleBand = lazy(() => import("@/components/FlashSaleBand"));
 const CustomProductSlider = lazy(() => import("@/components/CustomProductSlider"));
 const HomepageCategoryBands = lazy(() => import("@/components/HomepageCategoryBands"));
 const PWAInstallBanner = lazy(() => import("@/components/PWAInstallBanner"));
-const CustomerTestimonials = lazy(() => import("@/components/CustomerTestimonials"));
-const TopBrands = lazy(() => import("@/components/TopBrands"));
-const HealthTipsPreview = lazy(() => import("@/components/HealthTipsPreview"));
 const WhyChooseUs = lazy(() => import("@/components/WhyChooseUs"));
 const Footer = lazy(() => import("@/components/Footer"));
 
@@ -89,8 +89,8 @@ const Index = () => {
 
   useSEO(
     {
-      title: "Optimum Pharmaceuticals HLB — বাংলাদেশের বিশ্বস্ত অনলাইন ফার্মেসি | Online Pharmacy Bangladesh",
-      description: "বাংলাদেশে অনলাইনে ওষুধ অর্ডার করুন। দ্রুত হোম ডেলিভারি। Order medicines in Bangladesh with fast delivery.",
+      title: "Optimum Pharmaceuticals HLB — হারবাল ও আয়ুর্বেদিক ওষুধ অনলাইনে | Optimum & Index Laboratories",
+      description: "Optimum Pharmaceuticals HLB ও Index Laboratories-এর অরিজিনাল হারবাল, আয়ুর্বেদিক ও ইউনানি ওষুধ অনলাইনে অর্ডার করুন। লগইন ছাড়াই অর্ডার, ক্যাশ অন ডেলিভারি, সারা বাংলাদেশে ডেলিভারি।",
       canonical: "https://optimumpharmahlb.com/",
     },
     [
@@ -172,7 +172,7 @@ const Index = () => {
                         <div key={section.id} className={`${wrapClass} ${isMobileOnly ? "md:hidden" : ""}`}>
                           {showCategoryHeader && (
                             <div className="flex items-center justify-between px-1 mb-3">
-                              <h1 className="text-base font-bold text-foreground">Shop by Category</h1>
+                              <h1 className="text-base font-bold text-foreground">সমস্যা অনুযায়ী খুঁজুন · Shop by Need</h1>
                               <Link to="/categories" className="text-[11px] font-semibold text-primary bg-primary/5 px-3 py-1.5 rounded-full hover:bg-primary/10 transition-colors">
                                 All Categories
                               </Link>
@@ -189,36 +189,15 @@ const Index = () => {
 
 
 
+                {/* ── Trust strip + the two brands we sell ── */}
+                <OrderPromise />
+                <BrandShowcase />
+
                 {/* ── Shop by Category (bands) ── */}
                 <RevealSection>
                   <Suspense fallback={<ProductBandSkeleton bandIndex={0} />}>
                     <HomepageCategoryBands />
                   </Suspense>
-                </RevealSection>
-
-                {/* ── Bottom Section ── */}
-                <RevealSection>
-                  <div className="rounded-2xl border border-border bg-card overflow-hidden">
-                    <Suspense fallback={null}>
-                      <div className="px-3.5 pt-4 pb-3">
-                        <HealthTipsPreview />
-                      </div>
-                    </Suspense>
-                    <div className="h-px bg-border mx-4" />
-                    <Suspense fallback={null}>
-                      <div className="px-3.5 py-3">
-                        <h2 className="text-sm font-bold text-foreground mb-2.5 px-0.5">Top Brands</h2>
-                        <TopBrands />
-                      </div>
-                    </Suspense>
-                    <div className="h-px bg-border mx-4" />
-                    <Suspense fallback={null}>
-                      <div className="px-3.5 py-3">
-                        <CustomerTestimonials />
-                      </div>
-                    </Suspense>
-                    <div className="h-px bg-border mx-4" />
-                  </div>
                 </RevealSection>
 
                 <div className="md:hidden py-1">
@@ -237,6 +216,7 @@ const Index = () => {
         </Suspense>
 
         <FloatingCart />
+        <FloatingWhatsApp />
       </div>
     </PullToRefresh>
   );

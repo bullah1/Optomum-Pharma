@@ -41,7 +41,7 @@ async function loadHomepageDirect(): Promise<HomepageData> {
   const [settingsRes, bannersRes, categoriesRes, sectionsRes, bandRes, promoRes, flashRes, tipsRes, brandsRes] = await Promise.all([
     supabase.from("site_settings").select("key, value"),
     supabase.from("banners").select("id, title, subtitle, highlight, cta_text, cta_link, image_url, sort_order").eq("active", true).order("sort_order"),
-    supabase.from("categories").select("id, name, icon, image_url, sort_order, featured").order("sort_order"),
+    supabase.from("categories").select("id, name, icon, image_url, sort_order, featured").eq("is_active", true).order("sort_order"),
     supabase.from("homepage_sections").select("id, section_type, title, subtitle, config, sort_order, active").eq("active", true).order("sort_order"),
     supabase.rpc("get_category_band_products", { cat_names: BAND_CATEGORY_NAMES }),
     supabase.from("promo_cards").select("id, title, detail, highlight, icon, bg_class, action_text, action_link, sort_order").eq("active", true).order("sort_order"),

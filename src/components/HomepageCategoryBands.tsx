@@ -6,23 +6,29 @@ import { useQuery } from "@tanstack/react-query";
 import { ProductBandSkeleton } from "@/components/product/ProductCardSkeleton";
 import ProductCard from "@/components/product/ProductCard";
 
-/* ── Neuro-Marketing Band Config ── */
-const CATEGORY_BANDS = [
-  { categoryName: "Medicine", title: "Medicines", icon: Pill, accent: "#10b981", bg: "bg-white" },
-  { categoryName: "Women's Hygiene", title: "Women's Hygiene", icon: Heart, accent: "#ec4899", bg: "bg-[#FFF0F5]/40" },
-  { categoryName: "Baby & Mom Care", title: "Baby & Mom Care", icon: Baby, accent: "#3b82f6", bg: "bg-[#F8FBFF]/40" },
-  { categoryName: "Diapers & Pants", title: "Diapers & Pants", icon: Layers, accent: "#3b82f6", bg: "bg-[#F8FBFF]/40" },
-  { categoryName: "Herbal", title: "Herbal & Ayurvedic", icon: Leaf, accent: "#16a34a", bg: "bg-[#F9FBE7]/40" },
-  { categoryName: "Supplement", title: "Supplements", icon: FlaskConical, accent: "#f59e0b", bg: "bg-[#FFF8E7]/40" },
-  { categoryName: "Nutrition", title: "Nutrition", icon: Apple, accent: "#f97316", bg: "bg-[#FFF8E7]/40" },
-  { categoryName: "Healthcare", title: "Healthcare", icon: Stethoscope, accent: "#10b981", bg: "bg-white" },
-  { categoryName: "Home Care", title: "Home Care", icon: Home, accent: "#84cc16", bg: "bg-[#F9FBE7]/40" },
-];
+/* ── Health-concern band styles (keyed by category name) ── */
+type BandConfig = { categoryName: string; title: string; icon: any; accent: string; bg: string };
+const BAND_STYLES: Record<string, Omit<BandConfig, "categoryName">> = {
+  "Diabetes & Heart": { title: "ডায়াবেটিস ও হার্ট · Diabetes & Heart", icon: Heart, accent: "#e11d48", bg: "" },
+  "Digestion & Liver": { title: "হজম ও লিভার · Digestion & Liver", icon: Leaf, accent: "#16a34a", bg: "" },
+  "Brain & Energy": { title: "মস্তিষ্ক ও শক্তি · Brain & Energy", icon: Sparkles, accent: "#F8931D", bg: "" },
+  "Immunity & Nutrition": { title: "রোগ প্রতিরোধ ও পুষ্টি · Immunity", icon: Apple, accent: "#01AEF2", bg: "" },
+  "Men's Health": { title: "পুরুষের স্বাস্থ্য · Men's Health", icon: Stethoscope, accent: "#2563eb", bg: "" },
+  "Women's Health": { title: "নারীর স্বাস্থ্য · Women's Health", icon: Baby, accent: "#ec4899", bg: "" },
+  "Joint & Bone": { title: "হাড় ও জয়েন্ট · Joint & Bone", icon: Layers, accent: "#7c3aed", bg: "" },
+  "Cough & Respiratory": { title: "কাশি ও শ্বাসতন্ত্র · Cough", icon: FlaskConical, accent: "#0891b2", bg: "" },
+  "Kidney, Skin & Blood": { title: "কিডনি, ত্বক ও রক্ত · Kidney & Skin", icon: Pill, accent: "#0d9488", bg: "" },
+  "Personal Care": { title: "পার্সোনাল কেয়ার · Personal Care", icon: Home, accent: "#84cc16", bg: "" },
+};
+const bandConfigFor = (name: string): BandConfig => ({
+  categoryName: name,
+  ...(BAND_STYLES[name] || { title: name, icon: Leaf, accent: "#F8931D", bg: "" }),
+});
 
-const INITIAL_VISIBLE = 5;
+const INITIAL_VISIBLE = 10;
 
 /* ── Single Category Band ── */
-const CategoryBandView = memo(({ config, products, categoryId, isMobile }: { config: typeof CATEGORY_BANDS[0]; products: any[]; categoryId: string; isMobile: boolean }) => {
+const CategoryBandView = memo(({ config, products, categoryId, isMobile }: { config: BandConfig; products: any[]; categoryId: string; isMobile: boolean }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   if (!products.length) return null;
 
@@ -86,17 +92,13 @@ const HomepageCategoryBands = () => {
     );
   }
 
-  const bandData = CATEGORY_BANDS.map(band => {
-    const match = (data as any[] || []).find((d: any) =>
-      d.categoryName === band.categoryName ||
-      ((band as any).fallbackCategory && d.categoryName === (band as any).fallbackCategory)
-    );
-    return {
-      band,
-      products: (match?.products || []).slice(0, 6),
-      categoryId: match?.categoryId || "",
-    };
-  }).filter(b => b.products.length > 0);
+  const bandData = ((data as any[]) || [])
+    .map((d: any) => ({
+      band: bandConfigFor(d.categoryName),
+      products: (d.products || []).slice(0, 8),
+      categoryId: d.categoryId as string,
+    }))
+    .filter((b) => b.products.length > 0);
 
   const visibleBands = showAll ? bandData : bandData.slice(0, INITIAL_VISIBLE);
   const hasMore = bandData.length > INITIAL_VISIBLE;

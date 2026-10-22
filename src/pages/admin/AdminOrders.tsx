@@ -220,7 +220,12 @@ const AdminOrders = () => {
         .select("*, order_items(id, quantity, price, medicines(name, name_bn)), profiles!orders_user_id_profiles_fkey(name, phone, email, address)")
         .order("created_at", { ascending: false });
       if (error) throw error;
-      return data;
+      // Guest orders have no profile — show the name/phone captured at checkout
+      return (data || []).map((o: any) =>
+        o.profiles || !o.guest_phone
+          ? o
+          : { ...o, profiles: { name: `${o.guest_name || "Guest"} (Guest)`, phone: o.guest_phone, email: null, address: o.delivery_address } }
+      );
     },
   });
 

@@ -44,15 +44,15 @@ const QuickActions = memo(() => {
 
       {/* Discount banner — same card system */}
       <Link
-        to="/offers"
+        to="/categories"
         className={`${CARD_BASE} flex items-center gap-2.5 px-3 py-2.5 bg-emerald-50/70 border-emerald-100 group`}
       >
         <div className="w-9 h-9 rounded-lg bg-emerald-500 flex items-center justify-center shrink-0 shadow-sm">
           <Tag size={15} className="text-white" />
         </div>
         <div className="flex-1 min-w-0">
-          <p className="text-[12px] font-semibold text-foreground leading-tight">Up to 30% off on medicines</p>
-          <p className="text-[9.5px] text-muted-foreground mt-0.5 leading-tight">Check today's deals</p>
+          <p className="text-[12px] font-semibold text-foreground leading-tight">সব প্রোডাক্টে MRP থেকে ১০% ছাড়</p>
+          <p className="text-[9.5px] text-muted-foreground mt-0.5 leading-tight">লগইন ছাড়াই অর্ডার · ক্যাশ অন ডেলিভারি</p>
         </div>
         <ChevronRight size={15} className="text-muted-foreground/50 group-active:translate-x-0.5 transition-transform" />
       </Link>
